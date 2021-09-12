@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM --platform=linux/arm/v7 debian:stable-slim
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
