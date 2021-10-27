@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: php8.0-base
+    name: php80base
     labels:
-      app: php8.0-base
+      app: php80base
 spec:
     selector:
-        app: php8.0-base
+        app: php80base
     type: ClusterIP
     ports:
         - protocol: TCP

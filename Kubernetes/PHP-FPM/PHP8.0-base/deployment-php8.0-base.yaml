@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php8.0-base
+  name: php80base
   labels:
-    app: php8.0-base
+    app: php80base
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: php8.0-base
+      app: php80base
   template:
     metadata:
       labels:
-        app: php8.0-base
+        app: php80base
     spec:
       containers:
-      - name: php8.0-base
+      - name: php80base
         image: rodrigobp/php-fpm:php8.0-base
         ports:
         - containerPort: 9000

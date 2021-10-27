@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php7.4-base
+  name: php74base
   labels:
-    app: php7.4-base
+    app: php74base
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: php7.4-base
+      app: php74base
   template:
     metadata:
       labels:
-        app: php7.4-base
+        app: php74base
     spec:
       containers:
-      - name: php7.4-base
+      - name: php74base
         image: rodrigobp/php-fpm:php7.4-base
         ports:
         - containerPort: 9000
