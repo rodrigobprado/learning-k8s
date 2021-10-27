@@ -22,4 +22,6 @@ RUN sed -i 's/listen\s*=\s*.*/listen = 0.0.0.0:9000/g' /etc/php/8.0/fpm/pool.d/w
 
 EXPOSE 9000
 
+RUN mkdir -p /run/php/
+
 ENTRYPOINT /usr/sbin/php-fpm8.0 --nodaemonize --fpm-config /etc/php/8.0/fpm/php-fpm.conf

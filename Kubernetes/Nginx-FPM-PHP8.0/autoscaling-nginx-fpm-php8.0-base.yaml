@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: php80base
+  name: nginxfpmphp80base
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: php80base
+    name: nginxfpmphp80base
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginxfpmphp80base
+  labels:
+    app: nginxfpmphp80base
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginxfpmphp80base
+  template:
+    metadata:
+      labels:
+        app: nginxfpmphp80base
+    spec:
+      containers:
+      - name: nginxfpmphp80base
+        image: rodrigobp/nginx-fpm:php8.0-base
+        ports:
+        - containerPort: 80
