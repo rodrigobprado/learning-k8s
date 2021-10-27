@@ -19,3 +19,7 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 # configure fpm #
 #################
 RUN sed -i 's/listen\s*=\s*.*/listen = 0.0.0.0:9000/g' /etc/php/8.0/fpm/pool.d/www.conf 
+
+EXPOSE 9000
+
+ENTRYPOINT /usr/sbin/php-fpm8.0 --nodaemonize --fpm-config /etc/php/8.0/fpm/php-fpm.conf

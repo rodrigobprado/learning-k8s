@@ -17,3 +17,7 @@ RUN apt-get update && \
 # configure fpm #
 #################
 RUN sed -i 's/listen\s*=\s*.*/listen = 0.0.0.0:9000/g' /etc/php/7.4/fpm/pool.d/www.conf 
+
+EXPOSE 9000
+
+ENTRYPOINT /usr/sbin/php-fpm7.4 --nodaemonize --fpm-config /etc/php/7.4/fpm/php-fpm.conf
